@@ -1,0 +1,23 @@
+name: Home Work CI
+on:
+    push:
+      branches: [main]
+    workflow_dispatch:
+jobs:
+    Home_work_Pustovar_GA:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: action/checkout@v4
+        - name: Install the software
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: '6.0.x'
+        - name: Clone the project
+          run: git clone https://github.com/BodyaAP/dotnet-app-BodyaAP
+        - name: Download dependencies
+          run: dotnet restore
+        - name: Create a project build
+          run: dotnet build --configuration Release --no-restore
+        - name: Run unit tests
+          run: echo "dotnet test --no-build --verbosity normal"
