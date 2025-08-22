@@ -7,8 +7,6 @@ jobs:
     Home_work_Pustovar_GA:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout
-          uses: action/checkout@v4
         - name: Install the software
           uses: actions/setup-dotnet@v3
           with:
