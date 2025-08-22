@@ -12,7 +12,7 @@ jobs:
           with:
             dotnet-version: '6.0.x'
         - name: Clone the project
-          run: gh repo clone BodyaAP/dotnet-app-BodyaAP
+          run: https://github.com/DevOps2-Fundamentals/dotnet-app-BodyaAP.git
         - name: Download dependencies
           run: dotnet restore
         - name: Create a project build
